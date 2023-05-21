@@ -1,12 +1,37 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
 
-export default function SettingsScreen({ navigation }) {
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+export default function AdvancedScreen({ navigation }) {
+    const [selectedValue, setSelectedValue] = useState('');
+  
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text
-                onPress={() => navigation.navigate('Home')}
-                style={{ fontSize: 26, fontWeight: 'bold' }}>Settings Screen</Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+             <View style={styles.header}>
+        <Text style={styles.headerText}>Setting List</Text>
+      </View>
+     
+        
+    
+      </SafeAreaView>
     );
-}
+  }
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+    },
+    header: {
+      backgroundColor: '#f2f2f2',
+      alignItems: 'center',
+      paddingVertical: 10,
+    },
+    headerText: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+  
+
+   
+  
+  });
+  

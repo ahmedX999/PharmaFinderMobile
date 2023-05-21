@@ -7,11 +7,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 import DetailsScreen from './screens/DetailsScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import AdvancedScreen from './screens/AdvancedScreen';
 
 //Screen names
 const homeName = "Home";
 const detailsName = "Details";
 const settingsName = "Settings";
+const advancedName = "Advanced";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +36,9 @@ function MainContainer() {
             } else if (rn === settingsName) {
               iconName = focused ? 'settings' : 'settings-outline';
             }
+            else if (rn === advancedName) {
+              iconName = focused ? 'search' : 'search-outline';
+            }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -47,8 +52,11 @@ function MainContainer() {
         }}>
 
         <Tab.Screen name={homeName} component={HomeScreen} />
+        <Tab.Screen name={advancedName} component={AdvancedScreen} />
         <Tab.Screen name={detailsName} component={DetailsScreen} />
         <Tab.Screen name={settingsName} component={SettingsScreen} />
+        
+        
 
       </Tab.Navigator>
     </NavigationContainer>
